@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Accordion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .tabs {
+        position: relative;
+        margin: 25px 0;
+      }
+      .tab {
+        float: left;
+      }
+      .tab .tab-title {
+        background: #aaa;
+        padding: 10px;
+        position: relative;
+
+        z-index: 4;
+      }
+      .tab .radio {
+        display: none;
+      }
+      .content {
+        padding: 20px;
+        background-color: #ccc;
+        display: none;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        z-index: 0;
+      }
+      .radio:checked ~ .content {
+        display: block;
+      }
+      .radio:checked ~ .tab-title {
+        background-color: #ccc;
+        border-bottom: none;
+      }
+      @media screen and (max-width: 479px) {
+        .tab {
+          float: none;
+        }
+        .tab .tab-title {
+          background: #aaa;
+          padding: 10px;
+          display: block;
+          position: unset;
+        }
+
+        .radio:checked ~ .tab-title {
+          border-bottom: solid 1px #aaa;
+        }
+
+        .tab .content {
+          padding: 20px;
+          background-color: #ccc;
+          display: none;
+          position: unset;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tab">
+        <input type="radio" id="tab1" name="tab" class="radio" checked />
+        <label for="tab1" class="tab-title">Tab 1</label>
+
+        <div class="content">
+          <h4>Title 1</h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          lacinia nunc nibh, eget elementum metus ultricies commodo. Integer
+          tincidunt at elit sed maximus. Aliquam id consectetur ipsum. Donec
+          mattis ut justo consequat iaculis.
+        </div>
+      </div>
+
+      <div class="tab">
+        <input type="radio" id="tab2" name="tab" class="radio" />
+        <label for="tab2" class="tab-title">Tab 2</label>
+
+        <div class="content">
+          <h4>Title 2</h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          lacinia nunc nibh, eget elementum metus ultricies commodo. Integer
+          tincidunt at elit sed maximus. Aliquam id consectetur ipsum. Donec
+          mattis ut justo consequat iaculis.
+        </div>
+      </div>
+
+      <div class="tab">
+        <input type="radio" id="tab3" name="tab" class="radio" />
+        <label for="tab3" class="tab-title">Tab 3</label>
+
+        <div class="content">
+          <h4>Title 3</h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          lacinia nunc nibh, eget elementum metus ultricies commodo. Integer
+          tincidunt at elit sed maximus. Aliquam id consectetur ipsum. Donec
+          mattis ut justo consequat iaculis.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
